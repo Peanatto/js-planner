@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Claire's Planner</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="planner-grid">
+
+            <header class="planner-header">Claire's Planner</header>
+
+            <button id="add-event-btn">+</button>
+
+            <div class="view-container">
+
+                <main class="planner-calendar" id="month-view">
+
+                    <div class="calendar-header">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+
+                    <!-- This is filled up with divs in the script. -->
+                    <div class="calendar-days-grid">
+                        
+                    </div>
+
+                </main>
+
+                <section class="week-view-container hidden" id="week-view">
+
+                    <button id="back-to-month-btn">Back to Month</button>
+
+                    <div class="week-view-main">
+                        <!-- This is filled with divs (corner-spacer and header columns) in script. -->
+                        <div class="day-headers-grid"></div>
+
+                        <!-- This is filled with day columns for event prep after time bar in script. -->
+                        <div class="week-content-grid">
+                            <div class="time-bar"></div>
+                        </div>
+                    </div>
+
+                </section>
+        
+            </div>
+
+            <dialog id="add-event-modal">
+
+                <form id="event-form">
+
+                    <div class="form-row">
+                        <label for="type-event" id="type-label">Type:</label>
+
+                        <div class="radio-switch">
+                            <input type="radio" id="type-event" name="eventType" value="Event" checked>
+                            <label for="type-event">Event</label>
+
+                            <input type="radio" id="type-reminder" name="eventType" value="Reminder">
+                            <label for="type-reminder">Reminder</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row title-row">
+
+                        <label for="event-title" id="title-label">Title:</label>
+                        <input type="text" id="event-title" name="event-title">
+
+                    </div>
+
+                    <div class="form-row all-day-row">
+
+                        <label for="all-day" id="all-day-label">All-day:</label>
+                        <input type="checkbox" id="all-day" name="all-day">
+
+                    </div>
+
+                    <div class="form-row start-time-row">
+
+                        <label for="start-time" id="start-time-label">Start Time:</label>
+                        <input type="time" id="start-time" name="start-time">
+
+                    </div>
+
+                    <div class="form-row end-time-row">
+
+                        <label for="end-time" id="end-time-label">End Time:</label>
+                        <input type="time" id="end-time" name="end-time">
+                        
+                    </div>
+
+                    <div class="form-row repeat-row">
+
+                        <label for="repeat-select" id="repeat-label">Repeat:</label>
+                        <select id="repeat-select" name="repeat">
+                            <option value="never">Never</option>
+                            <option value="daily">Every Day</option>
+                            <option value="weekly">Every Week</option>
+                            <option value="biweekly">Every 2 Weeks</option>
+                            <option value="monthly">Every Month</option>
+                            <option value="yearly">Every Year</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-row alert-row">
+
+                        <label for="alert-select" id="alert-label">Alert:</label>
+                        <select id="alert-select" name="alert">
+                            <option value="none">None</option>
+                            <option value="at-time-of-event">At time of event</option>
+                            <option value="5-minutes-before">5 minutes before</option>
+                            <option value="10-minutes-before">10 minutes before</option>
+                            <option value="15-minutes-before">15 minutes before</option>
+                            <option value="30-minutes-before">30 minutes before</option>
+                            <option value="1-hour-before">1 hour before</option>
+                            <option value="2-hours-before">2 hours before</option>
+                            <option value="1-day-before">1 day before</option>
+                            <option value="2-days-before">2 days before</option>
+                            <option value="1-week-before">1 week before</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-row notes-row">
+
+                        <label for="event-notes" id="notes-label">Notes:</label>
+                        <textarea id="event-notes" name="event-notes"></textarea>
+
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" id="cancel-btn">Cancel</button>
+                        <button type="submit" id="save-btn">Save</button>
+                    </div>
+
+                </form>
+
+            </dialog>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
