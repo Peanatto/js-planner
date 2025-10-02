@@ -55,6 +55,8 @@
     text-align: center;
     border: 1px solid #eee;
     padding: 10px;
+    max-height: 120px;
+    overflow: hidden;
 }
 
 #add-event-btn {
@@ -195,3 +197,16 @@ input, select, textarea {
     font-family: 'Splatoon', serif;
 }
 
+.month-event-bar {
+    box-sizing: border-box;
+    height: 20px;
+    margin-bottom: 5px;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
